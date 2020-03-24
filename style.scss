@@ -7,125 +7,136 @@ $verydarkblue: hsl(234, 12%, 34%);
 $grayishblue: hsl(229, 6%, 66%);
 $verylightgray: hsl(0, 0%, 98%);
 
-$poppins: 'Poppins',
-sans-serif;
+$poppins: "Poppins", sans-serif;
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-size: 15px;
-    font-family: $poppins;
-    max-width: 1440px;
-    margin: auto;
+  font-size: 15px;
+  font-family: $poppins;
+  max-width: 1440px;
+  margin: auto;
 }
 
 .cards-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .cards-section__introduction {
+    margin-top: 5em;
+    text-align: center;
+    animation: 1s ease-in 0s 1 showIt;
+
+    h1 {
+      font-size: 2.5em;
+      font-weight: 200;
+      color: $verydarkblue;
+    }
+
+    h2 {
+      font-weight: 600;
+      font-size: 2.5em;
+      color: $verydarkblue;
+    }
+
+    p {
+      color: $grayishblue;
+      margin-top: 1em;
+      display: inline-block;
+      font-size: 1.1em;
+      width: 60%;
+    }
+  }
+
+  .cards-section__cards {
+    margin-top: 3em;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    animation: 1s ease-in 0.1s 1 showIt;
 
-    .cards-section__introduction {
-        margin-top: 5em;
-        text-align: center;
-
-        h1 {
-            font-size: 2.5em;
-            font-weight: 200;
-            color: $verydarkblue;
-        }
-
-        h2 {
-            font-weight: 600;
-            font-size: 2.5em;
-            color: $verydarkblue;
-        }
-
-        p {
-            color: $grayishblue;
-            margin-top: 1em;
-            display: inline-block;
-            font-size: 1.1em;
-            width: 60%;
-        }
+    .twocards {
+      display: flex;
+      flex-direction: column;
     }
 
-    .cards-section__cards {
-        margin-top: 3em;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
+    .card {
+      flex: 0 1 auto;
+      height: 250px;
+      width: 350px;
+      // max-height: 250px;
+      // max-width: 350px;
+      background-color: $verylightgray;
+      border: 1px solid $verylightgray;
+      box-shadow: 0 15px 25px 0 hsla(229, 6%, 66%, 0.4);
+      border-radius: 10px;
+      padding: 1.8em;
+      margin: 1em;
+      position: relative;
 
-        .twocards {
-            display: flex;
-            flex-direction: column;
-        }
+      h3 {
+        font-size: 1.3em;
+        color: $verydarkblue;
+      }
 
-        .card {
-            flex: 0 1 auto;
-            height: 250px;
-            width: 350px;
-            // max-height: 250px;
-            // max-width: 350px;
-            background-color: $verylightgray;
-            border: 1px solid $verylightgray;
-            box-shadow: 0 15px 25px 0 hsla(229, 6%, 66%, 0.4);
-            border-radius: 10px;
-            padding: 1.8em;
-            margin: 1em;
-            position: relative;
+      p {
+        color: $grayishblue;
+        margin-top: 1em;
+        font-weight: 200;
+        font-size: 0.9em;
+        letter-spacing: 0.05em;
+      }
 
-            h3 {
-                font-size: 1.3em;
-                color: $verydarkblue
-            }
-
-            p {
-                color: $grayishblue;
-                margin-top: 1em;
-                font-weight: 200;
-                font-size: 0.9em;
-                letter-spacing: 0.05em;
-            }
-
-            img {
-                position: absolute;
-                bottom: 35px;
-                right: 35px;
-            }
-        }
-
-        .supervisor {
-            border-top: 5px solid $cyan;
-        }
-
-        .builder {
-            border-top: 5px solid $red;
-        }
-
-        .karma {
-            margin-top: 2em;
-            border-top: 5px solid $orange;
-        }
-
-        .calculator {
-            border-top: 5px solid $blue;
-        }
+      img {
+        position: absolute;
+        bottom: 35px;
+        right: 35px;
+      }
     }
+
+    .supervisor {
+      border-top: 5px solid $cyan;
+    }
+
+    .builder {
+      border-top: 5px solid $red;
+    }
+
+    .karma {
+      margin-top: 2em;
+      border-top: 5px solid $orange;
+    }
+
+    .calculator {
+      border-top: 5px solid $blue;
+    }
+  }
 }
 
 @media screen and (max-width: 1150px) {
-    .cards-section__cards {
-        flex-direction: column;
-    }
+  .cards-section__cards {
+    flex-direction: column;
+  }
 
-    .twocards {
-        display: flex;
-        flex-direction: column;
-    }
+  .twocards {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@keyframes showIt {
+  0% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
 }

@@ -31,6 +31,8 @@ body {
 .cards-section .cards-section__introduction {
   margin-top: 5em;
   text-align: center;
+  -webkit-animation: 1s ease-in 0s 1 showIt;
+          animation: 1s ease-in 0s 1 showIt;
 }
 
 .cards-section .cards-section__introduction h1 {
@@ -66,6 +68,8 @@ body {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-animation: 1s ease-in 0.1s 1 showIt;
+          animation: 1s ease-in 0.1s 1 showIt;
 }
 
 .cards-section .cards-section__cards .twocards {
@@ -145,6 +149,24 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+}
+
+@-webkit-keyframes showIt {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes showIt {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
   }
 }
 /*# sourceMappingURL=style.css.map */
