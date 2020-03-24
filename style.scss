@@ -59,13 +59,19 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
+
+        .twocards {
+            display: flex;
+            flex-direction: column;
+        }
 
         .card {
-            flex: 1 1 auto;
+            flex: 0 1 auto;
             height: 250px;
             width: 350px;
-            max-height: 250px;
-            max-width: 350px;
+            // max-height: 250px;
+            // max-width: 350px;
             background-color: $verylightgray;
             border: 1px solid $verylightgray;
             box-shadow: 0 15px 25px 0 hsla(229, 6%, 66%, 0.4);
